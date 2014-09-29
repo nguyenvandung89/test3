@@ -197,6 +197,83 @@ Về cấu trúc thư mục của một app android cơ bản có các thành ph
 + res/values: Đây là thư mục dành cho các file XML khác chứa 1 tập hợp các tài nguyên, ví dụ như: các định nghĩa về strings, colors.
 + AndroidManifest.xml: Đây là file manifest mô tả các đặc điểm cô bản của ứng dụng và định nghĩa các components.
 
+Trong demo trên có 2 file chính mà các bạn cần chú ý khi mới lập trình android
+
+
+MainActivity.java: file này là file thực thi các sự kiện, hành động(chứa source code)
+Trong demo trên tôi làm nhập vào name và khi submit nó thì tên sẽ được hiển thị lại ở chỗ khác gọi tới nó
+ví dụ như ta có đoạn mã sau
+
+protected void onCreate(Bundle savedInstanceState) {
+
+  super.onCreate(savedInstanceState);
+
+  setContentView(R.layout.activity_main);
+
+  // lấy các view được khai báo trong file layout(active_main.xml)
+
+  edit = (EditText) findViewById(R.id.edittext);
+
+  text = (TextView) findViewById(R.id.textview);
+
+  button = (Button) findViewById(R.id.button);
+
+  edit.setText(""); hiển thị chuỗi string trên edittext
+
+  button.setOnClickListener(new OnClickListener() {
+
+	@Override
+
+	public void onClick(View v) {
+
+	  text.setText("Hello: " + edit.getText().toString());
+
+	}
+
+});
+
+}
+
+
+đoạn mã trên thực hiện khi người dùng nhập input name và submit ok thì chúng ta sẽ hiển thị tên mà người dùng vừa nhập vào
+
+
+active_main.xml: file này chính là file layout của app trong đó thể hiện view của các màn hình
+
+
+<EditText
+	android:id="@+id/edittext"
+	android:layout_width="fill_parent"
+	android:textColor="#035aa9"
+	android:hint="Name"
+	android:layout_height="wrap_content" />
+
+	<Button
+	android:id="@+id/button"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:textColor="#035aa9"
+	android:layout_gravity="center_horizontal"
+	android:text="Submit" />
+
+	<TextView
+	android:id="@+id/textview"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:text="WelCome"
+	android:textColor="#ff0000"
+	android:textAppearance="?android:attr/textAppearanceLarge" />
+
+Hình ảnh Trước khi submit
+
+
+![](https://cloud.githubusercontent.com/assets/4001514/4438144/783b1530-47a7-11e4-9ea9-fcc47219bb2b.png)
+
+
+Hình ảnh sau khi submit
+
+
+![](https://cloud.githubusercontent.com/assets/4001514/4438145/789825ae-47a7-11e4-8418-75eec930c263.png)
 
 
 
