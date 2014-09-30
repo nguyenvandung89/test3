@@ -155,7 +155,7 @@ chọn File → New → Android Application Project
 Trong màn hình sau thì nhập các thông tin như tên project, tên package các version api...
 
 
-![](https://cloud.githubusercontent.com/assets/4001514/4401692/6f9f0612-4490-11e4-8588-02441fb053d2.png)
+![](https://cloud.githubusercontent.com/assets/4001514/4452841/1b57fdf8-484f-11e4-938d-cdb13b0beadd.png)
 
 
 
